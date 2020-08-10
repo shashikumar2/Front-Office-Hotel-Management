@@ -4,13 +4,11 @@ const roomSchema = new Schema({
   roomNo: {
     type: Number,
     required: true,
-    unique: true  
-    
+    unique: true      
   },
   airConditioner: {
     type: Boolean,
-    default: false
-    
+    default: false    
   }
 });
 

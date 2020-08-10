@@ -32,7 +32,6 @@ const bookingSchema = new Schema({
     required: true    
     },
 
-
   adults: {
     type: String,
     required: true
