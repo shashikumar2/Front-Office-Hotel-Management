@@ -17,11 +17,8 @@ export const startGetRooms = () => {
         })
             .then(response => {
                  console.log('roomsAction',response.data)
-                const rooms = response.data 
-                
-                dispatch(setRooms(rooms))
-                //redirect()
-                
+                const rooms = response.data                 
+                dispatch(setRooms(rooms))                
             })
     }
 }
@@ -36,8 +33,7 @@ export const startPostRoom = (roomsdata, redirect) => {
             }
         })
             .then(response => {
-                 console.log('roomAddAction', response.data) 
-               //  redirect()              
+                 console.log('roomAddAction', response.data)             
                  dispatch(startGetRooms())                
             })
     }
@@ -45,7 +41,6 @@ export const startPostRoom = (roomsdata, redirect) => {
 
 
 /*************Put room*************/
-
 
 export const startPutRoom = (roomId, roomdata) => {
     return (dispatch) => {
@@ -55,7 +50,7 @@ export const startPutRoom = (roomId, roomdata) => {
             }
         })            
             .then(response => {
-                 console.log('roomEditAction', response.data)
+                console.log('roomEditAction', response.data)
                 const room = response.data                 
                 dispatch(startGetRooms())                
             })
@@ -76,7 +71,6 @@ export const startDeleteRoom = (roomId) => {
             .then(response => {
                 console.log('roomDeleteAction', response.data)       
                 dispatch(startGetRooms())                
-
             })
     }
 }

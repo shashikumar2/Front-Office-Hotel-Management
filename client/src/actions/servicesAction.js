@@ -16,7 +16,7 @@ export const startGetServices = () => {
             }
         })
             .then(response => {
-                 console.log('servicesAction',response.data)
+                console.log('servicesAction',response.data)
                 const services = response.data                 
                 dispatch(setServices(services))                
             })
@@ -43,7 +43,6 @@ export const startPostService = (servicesdata, redirect) => {
 
 /*************Put service*************/
 
-
 export const startPutService = (serviceId, servicedata) => {
     return (dispatch) => {
         axios.put(`/services/${serviceId}`, servicedata,{
@@ -53,16 +52,12 @@ export const startPutService = (serviceId, servicedata) => {
         })
             
             .then(response => {
-                 console.log('serviceEditAction', response.data)
-           
-                
+                console.log('serviceEditAction', response.data)                
                 dispatch(startGetServices())
                 
             })
     }
 }
-
-
 
 /************  Delete Service **************/
 

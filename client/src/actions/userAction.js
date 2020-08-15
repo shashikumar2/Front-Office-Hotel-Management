@@ -1,9 +1,10 @@
 import axios from 'axios'
 
+/*****************Register***************************/
+
 export const setUser = (user) => {
     return {type : 'SET_USER', payload : user}
 }
-
 
 export const startUserRegister = (formData, redirect) => {
     return(dispatch) => {
@@ -24,20 +25,21 @@ export const startUserRegister = (formData, redirect) => {
     }
 }
 
+/***********************Login***************************/
+
 export const startUserLogin = (userLoginData, redirect) => {
     return (dispatch) => {
         axios.post('/users/login', userLoginData)
             .then(response => {
-                 console.log('userLoginAction', response.data)
-                 if(response.data.token){
+                console.log('userLoginAction', response.data)
+                if(response.data.token){
                 localStorage.setItem('token',response.data.token)
                 dispatch(startGetUser())
                 redirect()
 
               }else {
                   alert('Login failed')
-              }
-                          
+              }                          
             })
             .catch((err)=>{
                 console.log(err)
@@ -62,14 +64,10 @@ export const startGetUser = ()=>{
       .catch((err)=>{
           console.log(err)
       })
-     }
-          
- }
+     }          
+}
 
-
-
-
-
+/***********************Logout***************************/
 
  export const startUserLogout = () => {
     return (dispatch) => {
@@ -83,12 +81,9 @@ export const startGetUser = ()=>{
                // const token = response.data 
                if(response.data.notice) {
                  alert(response.data.notice)
-                localStorage.removeItem('token')
-                
+                localStorage.removeItem('token')                
                 dispatch(setUser({}))
-                window.location.href = "/"
-
-                 
+                window.location.href = "/"                 
             }              
         })
         .catch((err)=>{
@@ -96,29 +91,3 @@ export const startGetUser = ()=>{
         })
     }
 }
-/*export const startUserLogout = () => {
-    return (dispatch) => {
-        axios.delete('/users/logout', {
-        headers : {
-            'Authorization' : localStorage.getItem('token')
-         }
-        })
-
-            .then(response => {
-                 console.log('userLogoutAction', response.data)
-               // const token = response.data 
-               if(response.data.notice) {
-                 alert(response.data.notice)
-                localStorage.removeItem('token')
-                
-                dispatch(setUser({}))
-                window.location.href = "/"
-
-                 
-            }              
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
-    }
-}*/

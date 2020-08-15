@@ -1,9 +1,6 @@
 import React from 'react'
-import axios from 'axios'
-import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { startPostBilling } from '../../actions/billingsAction'
-import {Redirect } from 'react-router-dom'
 import moment from 'moment'
 
 class BillingsNew extends React.Component{
@@ -19,7 +16,6 @@ class BillingsNew extends React.Component{
             noOfDays : '',
             price: '',
             amount: '',
-
         }
     }
 
@@ -30,12 +26,11 @@ class BillingsNew extends React.Component{
     }
 
     handleBlur = () =>{
-        console.log(this.state.customer,"this.state.customer")
-        let c=this.props.customers.find(cust=> cust.name === this.state.customer)
-        let x=this.props.bookings.find(book=>book.customer == c._id)
-        console.log(x,"x")
+        let requiredCustomer=this.props.customers.find(cust=> cust.name === this.state.customer)
+        let requiredBooking=this.props.bookings.find(book=>book.customer == requiredCustomer._id)
+        
         this.setState ( {
-            checkIn : x.checkIn
+            checkIn : requiredBooking.checkIn
         })
     }
     
@@ -43,22 +38,18 @@ class BillingsNew extends React.Component{
         this.setState({
             amount : (this.state.noOfDays * this.state.price * this.state.rooms)
         })
-
     }
-
 
     handleSubmit = (e)=>{
-     e.preventDefault()
-     console.log(this.state)
-    const redirect=()=>{
-     
+      e.preventDefault()
+      const redirect=()=>{     
         return this.props.history.push('/billings')
-    }
+      }
     
-    const customerTemp = this.props.customers.find(cust=> cust.name === this.state.customer)
-    const bookingTemp = this.props.bookings.find(book=> book.checkIn === this.state.checkIn)
+      const customerTemp = this.props.customers.find(cust=> cust.name === this.state.customer)
+      const bookingTemp = this.props.bookings.find(book=> book.checkIn === this.state.checkIn)
 
-    const billingData ={
+      const billingData ={
         "code" : this.state.code,
         "customer" : customerTemp._id,        
         "rooms" : this.state.rooms,
@@ -68,24 +59,19 @@ class BillingsNew extends React.Component{
         "noOfDays" : this.state.noOfDays,
         "price" :  this.state.price,
         "amount" : this.state.amount
+      }
+       this.props.dispatch(startPostBilling(billingData, redirect))    
     }
-     this.props.dispatch(startPostBilling(billingData, redirect))    
-    }
-
-
 
     render(){
-      //  console.log(this.state.checkIn, "this.state.checkIn")
         return (
             <div>
-            <br/><br/>  
-              
-           <div className="row bg-light">  
-           
+            <br/><br/>                
+             <div className="row bg-light">             
               <div className="col-md-8 offset-md-2">
-                <p className="h4 text-center">Add Bill</p><br/>
+              <p className="h4 text-center">Add Bill</p><br/>
                 
-                <form onSubmit = {this.handleSubmit}>
+              <form onSubmit = {this.handleSubmit}>
 
                 <div className="form-group row">
                 <label class="col-sm-2 col-form-label col-form-label-sm h3"  htmlFor= 'code'>Code No</label> 
@@ -94,7 +80,6 @@ class BillingsNew extends React.Component{
                 </div>    
                 </div><br/>
 
-
                 <div className="form-group row">
                 <label class="col-sm-2 col-form-label col-form-label-sm h3"  htmlFor= 'customer'>Customer</label> 
                 <div class="col-sm-10">                                            
@@ -102,34 +87,28 @@ class BillingsNew extends React.Component{
                     <option value =''>--select--</option>
                         {
                             this.props.customers.map(customer=> {
-                                return(
-                            
+                                return(                            
                                  <option  value={customer.name}> {customer.name} </option>
                                 )
                            })
                         }
-                        </select>
-                        </div>   
-                        </div><br/>
+                </select>
+                </div>   
+                </div><br/>
                 
                 <div className="form-group row">
                      <label class="col-sm-2 col-form-label col-form-label-sm h3" htmlFor= 'rooms'>Rooms</label>   
                      <div class="col-sm-10">                   
                     <input className="form-control form-control-sm" type ='text' id ='rooms' name ='rooms' value = { this.state.rooms} onChange= {this.handleChange}/>
                     </div>   
-                    </div><br/>
-
-
+                </div><br/>
 
                <div className="form-group row">
                     <label class="col-sm-2 col-form-label col-form-label-sm h3"  htmlFor='checkIn'>Check-In</label>  
                     <div class="col-sm-10">                   
                     <input className="form-control form-control-sm"  type='text' id='checkIn'  name='checkIn' value={this.state.checkIn && moment(this.state.checkIn).format('LL')}/> 
                     </div>   
-                    </div><br/>   
-
-
-
+                </div><br/>   
 
                 <div className="form-group row">
                     <label  class="col-sm-2 col-form-label col-form-label-sm h3"  htmlFor='checkOut'>Check-Out</label> 
@@ -138,7 +117,6 @@ class BillingsNew extends React.Component{
                     </div>   
                 </div><br/>      
                  
-
                 <div className="form-group row">
                     <label class="col-sm-2 col-form-label col-form-label-sm h3"   htmlFor='time'>Time</label>                    
                     <div class="col-sm-10"> 
@@ -167,14 +145,12 @@ class BillingsNew extends React.Component{
                     </div>   
                 </div><br/>  
 
-                    <input className="btn btn-secondary btn-sm btn-block" type ='submit' value='Submit' /><br/><br/><br/>
+                <input className="btn btn-secondary btn-sm btn-block" type ='submit' value='Submit' /><br/><br/><br/>
 
-                    </form>
-
-                    </div>
+              </form>
             </div>
-         </div>          
-                
+           </div>
+         </div>                          
         )
     }
 }
@@ -185,7 +161,6 @@ const mapStateToProps = (state) => {
         bookings : state.bookings,                   
     }
 }
-
 export default connect(mapStateToProps)(BillingsNew)
 
  

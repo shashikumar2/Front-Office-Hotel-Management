@@ -5,11 +5,9 @@ const bookingsReducer = (state = bookingsInitialState, action) => {
         case 'SET_BOOKINGS' : {
             return [].concat(action.payload)
         }
-        default: {
-            // return [...state]
+        default: {         
             return [].concat(state)
         }
     }
 }
-
 export default bookingsReducer

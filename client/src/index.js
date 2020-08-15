@@ -1,10 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-
 import { Provider } from 'react-redux' 
 import configureStore from './store/configureStore'
-
 import {startGetUser} from './actions/userAction'
 import {startGetCustomers} from './actions/customersAction'
 import {startGetRooms} from './actions/roomsAction'
@@ -19,7 +17,6 @@ console.log(store.getState())
 store.subscribe(() => {
     console.log('index',store.getState())
 })
-
 
 if(localStorage.getItem('token')) {
     store.dispatch(startGetUser())

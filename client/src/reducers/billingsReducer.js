@@ -5,13 +5,11 @@ const billingsReducer = (state = billingsInitialState, action) => {
         case 'SET_BILLINGS' : {
             return [].concat(action.payload)
         }
-        default: {
-            
+        default: {            
             return [].concat(state)
         }
     }
 }
-
 export default billingsReducer
 
 

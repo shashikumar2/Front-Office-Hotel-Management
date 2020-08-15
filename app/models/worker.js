@@ -13,6 +13,7 @@ const workerSchema = new Schema({
     required: true,
     min: 10
   },
+  
   available: {
     type: Boolean,
     default: false
@@ -20,5 +21,4 @@ const workerSchema = new Schema({
 });
 
 const Worker = mongoose.model("Worker", workerSchema);
-
 module.exports = Worker;

@@ -17,11 +17,8 @@ export const startGetBookings = () => {
         })
             .then(response => {
                  console.log('bookingsAction',response.data)
-                const bookings = response.data 
-                
-                dispatch(setBookings(bookings))
-                //redirect()
-                
+                const bookings = response.data                 
+                dispatch(setBookings(bookings))                
             })
     }
 }

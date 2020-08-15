@@ -40,9 +40,7 @@ export const startPostWorker = (workersdata, redirect) => {
     }
 }
 
-
 /*************Put worker*************/
-
 
 export const startPutWorker = (workerId, workerdata) => {
     return (dispatch) => {
@@ -52,7 +50,7 @@ export const startPutWorker = (workerId, workerdata) => {
             }
         })            
             .then(response => {
-                 console.log('workerEditAction', response.data)
+                console.log('workerEditAction', response.data)
                 const worker = response.data                 
                 dispatch(startGetWorkers())                
             })

@@ -17,11 +17,8 @@ export const startGetBillings = () => {
         })
             .then(response => {
                  console.log('billingsAction',response.data)
-                const billings = response.data 
-                
-                dispatch(setBillings(billings))
-        
-                
+                const billings = response.data                 
+                dispatch(setBillings(billings))                
             })
     }
 }
@@ -62,7 +59,7 @@ export const startDeleteBilling = (billingId) => {
 }
 
 
-
+/*****************Show Bill******************************/
 
 export const setShowBilling = (billing) => {
     return { type: 'SET_SHOW_BILLING', payload: billing}
@@ -79,12 +76,9 @@ export const startShowBilling = (billingId, redirect) => {
         })
             .then(response => {
                  console.log('billingShowAction', response.data)
-                const billing = response.data 
-               
+                const billing = response.data                
                 dispatch(setShowBilling(billing))
-                redirect()
-                
-                                
+                redirect()                                
             })
     }
 }

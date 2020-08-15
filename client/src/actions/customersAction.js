@@ -16,12 +16,9 @@ export const startGetCustomers = () => {
             }
         })
             .then(response => {
-                 console.log('customersAction',response.data)
-                const customers = response.data 
-                
-                dispatch(setCustomers(customers))
-                //redirect()
-                
+                console.log('customersAction',response.data)
+                const customers = response.data                 
+                dispatch(setCustomers(customers))                
             })
     }
 }
@@ -57,7 +54,6 @@ export const startDeleteCustomer = (customerId) => {
             .then(response => {
                 console.log('customerDeleteAction', response.data)       
                 dispatch(startGetCustomers())                
-
             })
     }
 }

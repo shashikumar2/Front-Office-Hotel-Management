@@ -19,9 +19,7 @@ const configureStore = () => {
         services : servicesReducer,
         billings : billingsReducer,
         billing : billingShowReducer
-
     }), applyMiddleware(thunk))
     return store 
 }
-
 export default configureStore

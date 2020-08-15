@@ -5,11 +5,9 @@ const servicesReducer = (state = servicesInitialState, action) => {
         case 'SET_SERVICES' : {
             return [].concat(action.payload)
         }
-        default: {
-            // return [...state]
+        default: {            
             return [].concat(state)
         }
     }
 }
-
 export default servicesReducer

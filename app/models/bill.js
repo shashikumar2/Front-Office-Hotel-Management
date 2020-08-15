@@ -53,10 +53,8 @@ const billSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now
-},
-  
+},  
 });
 
 const Bill = mongoose.model("Bill", billSchema);
-
 module.exports = Bill;

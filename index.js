@@ -13,7 +13,6 @@ app.use(express.json())
 const routes = require('./config/routes')
 app.use('/', routes)
 
-
 app.listen(port, () => {
     console.log('listening on port', port)
 })

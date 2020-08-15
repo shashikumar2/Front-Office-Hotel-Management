@@ -6,10 +6,8 @@ const workersReducer = (state = workersInitialState, action) => {
             return [].concat(action.payload)
         }
         default: {
-            // return [...state]
             return [].concat(state)
         }
     }
 }
-
 export default workersReducer
