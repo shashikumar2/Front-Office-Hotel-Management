@@ -25,7 +25,7 @@ class BookingsList extends React.Component{
     render(){        
       return(    
         <div>
-        {((this.props.rooms.length!=0) && (this.props.customers.length!=0) && (this.props.bookings.length!=0) ) ?  (
+        {((this.props.rooms.length!=0) && (this.props.customers.length!=0) ) ? (
         <div>
         <p  className="h4 text-center "><em><strong>Booking</strong></em></p> 
         <img src="/images/bookings3.jpg" className="img-fluid" alt="Responsive image"/><br/><br/>
@@ -33,7 +33,8 @@ class BookingsList extends React.Component{
         <table className="table table-sm table-striped" >
             
             <thead className="thead-dark">
-                <tr>                   
+                <tr>   
+                    <th> Code No</th>                
                     <th> Name</th>
                     <th> Rooms</th>
                     <th> Check In</th> 
@@ -48,7 +49,8 @@ class BookingsList extends React.Component{
                 {
                    this.props.bookings.map((booking,i) =>{
                        return(
-                            <tr key={i}>                                
+                            <tr key={i}>     
+                                <td> {booking.code}</td>                           
                                 <td> {this.props.customers.find(cust=>cust._id ===booking.customer).name}</td>
                                 <td> {(this.props.rooms.filter(room=>((booking.rooms.includes(room._id)))).map(rm=>rm.roomNo)).join(', ')}</td>
                                 <td> {booking.checkIn && moment(booking.checkIn).format('LL')}</td> 

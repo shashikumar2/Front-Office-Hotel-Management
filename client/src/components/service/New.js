@@ -5,7 +5,8 @@ import { startPostService } from '../../actions/servicesAction'
 class ServicesNew extends React.Component{
     constructor(){
         super()
-        this.state= {                     
+        this.state= {   
+            code : '',                   
             room : '',
             type : '',
             worker : '',
@@ -38,7 +39,8 @@ class ServicesNew extends React.Component{
         const workerTemp = this.props.workers.find(work=> work.name === this.state.worker)
         const roomTemp = this.props.rooms.find(room=> room.roomNo == this.state.room)
 
-        const serviceData ={        
+        const serviceData ={ 
+            "code" : this.state.code,       
             "room" : roomTemp._id,
             "type" : this.state.type,
             "worker" : workerTemp._id,                
@@ -58,6 +60,14 @@ class ServicesNew extends React.Component{
              <p className="h4 text-center">Add Service </p><br/>
 
               <form onSubmit = {this.handleSubmit}>
+
+                <div className="form-group row">
+                <label class="col-sm-2 col-form-label col-form-label-sm h3"  htmlFor= 'code'>Code No</label> 
+                <div class="col-sm-10">                       
+                <input className="form-control form-control-sm"  type ='text' id ='code' name ='code' value = {this.state.code} onChange= {this.handleChange}/>
+                </div>    
+                </div><br/>
+
                 <div className="form-group row"> 
                 <label class="col-sm-2 col-form-label col-form-label-sm h3" htmlFor= 'room'>Room</label>  
                 <div class="col-sm-10">  

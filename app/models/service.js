@@ -1,6 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const serviceSchema = new Schema({
+  code: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true,
+    maxlength: 20
+  },
   
   room: {
     type: Schema.Types.ObjectId,

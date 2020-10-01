@@ -32,7 +32,7 @@ class BillingsList extends React.Component{
   render(){
     return(    
       <div>
-        {( (this.props.customers.length!=0) && (this.props.bookings.length!=0) && (this.props.billings.length!=0)) ?  (
+        {( (this.props.customers.length!=0) && (this.props.bookings.length!=0)) ?  (
         <div>
         <p  className="h4 text-center "><em><strong>Billing</strong></em></p>
         <img src="/images/billings2.jpg" className="img-fluid" alt="Responsive image" /><br/><br/>

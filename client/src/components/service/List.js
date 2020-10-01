@@ -26,14 +26,15 @@ class ServicesList extends React.Component{
     render(){
       return(    
        <div>
-        {((this.props.rooms.length!=0) && (this.props.workers.length!=0) && (this.props.services.length!=0)) ?  (
+        {((this.props.rooms.length!=0) && (this.props.workers.length!=0)) ? (
         <div>
         <p  className="h4 text-center"><em><strong>Services</strong></em></p>        
         <img src="/images/services9.jpeg" className="img-fluid col-md-12" alt="Responsive image" /> <br/><br/>   
         
         <table className="table table-sm table-striped"  >
             <thead className="thead-dark">
-                <tr>                    
+                <tr>       
+                    <th> Code No</th>             
                     <th> Room</th>
                     <th> Service</th>
                     <th> Worker</th>                  
@@ -48,7 +49,8 @@ class ServicesList extends React.Component{
                 {
                    this.props.services.map((service,i) =>{
                        return(
-                            <tr key={i}>                                
+                            <tr key={i}>  
+                                <td> {service.code}</td>                              
                                 <td> {this.props.rooms.find(rm=>rm._id ===service.room).roomNo}</td>
                                 <td> {service.type}</td> 
                                 <td> {this.props.workers.find(work=>work._id ===service.worker).name}</td>
