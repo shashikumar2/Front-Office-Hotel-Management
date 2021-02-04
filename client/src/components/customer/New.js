@@ -24,7 +24,7 @@ class CustomersNew extends React.Component{
         const redirect=()=>{     
             return this.props.history.push('/customers')
         }
-        this.props.dispatch(startPostCustomer(this.state,redirect))    
+        this.props.dispatch(startPostCustomer(this.state, redirect))    
     }
 
     render(){

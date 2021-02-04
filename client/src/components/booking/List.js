@@ -55,7 +55,7 @@ class BookingsList extends React.Component{
                                 <td> {(this.props.rooms.filter(room=>((booking.rooms.includes(room._id)))).map(rm=>rm.roomNo)).join(', ')}</td>
                                 <td> {booking.checkIn && moment(booking.checkIn).format('LL')}</td> 
                                 <td> {booking.time}</td>
-                                <td>{booking.checkOut && moment(booking.checkOut).format('LL')}</td>                                  
+                                <td> {booking.checkOut && moment(booking.checkOut).format('LL')}</td>                                  
                                 <td> {booking.adults}</td>                                                            
                                 <td> { <button className="btn btn-secondary" onClick={() => {
                                                    this.handleRemove(booking._id)
@@ -84,4 +84,5 @@ const mapStateToProps = (state) => {
         customers: state.customers               
     }
 }
+
 export default connect(mapStateToProps)(BookingsList)
