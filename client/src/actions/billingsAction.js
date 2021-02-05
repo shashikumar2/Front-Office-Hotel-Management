@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-/************* Get Billing *************/
+/************* Get Billing ************/
 
 // sync
 export const setBillings = (billings) => {
@@ -23,7 +23,7 @@ export const startGetBillings = () => {
     }
 }
 
-/************* Post Billing *************/
+/************* Post Billing ********************/
 
 export const startPostBilling = (billingsdata, redirect) => {
     return (dispatch) => {
