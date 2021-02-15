@@ -7,6 +7,7 @@ export const setBookings = (bookings) => {
     return { type: 'SET_BOOKINGS', payload: bookings}
 }
 
+
 // async 
 export const startGetBookings = () => {
     return (dispatch) => {
@@ -22,6 +23,7 @@ export const startGetBookings = () => {
             })
     }
 }
+
 
 /************* Post Booking *************/
 

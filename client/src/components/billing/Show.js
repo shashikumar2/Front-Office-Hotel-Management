@@ -81,5 +81,6 @@ const mapStateToProps = (state, props) => {
         billings: state.billings,        
     }
 }
+
 export default connect(mapStateToProps)(BillingShow)
 
