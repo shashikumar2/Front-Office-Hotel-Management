@@ -22,4 +22,5 @@ const configureStore = () => {
     }), applyMiddleware(thunk))
     return store 
 }
+
 export default configureStore
