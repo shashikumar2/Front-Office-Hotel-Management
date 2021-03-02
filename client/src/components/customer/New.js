@@ -71,5 +71,6 @@ class CustomersNew extends React.Component{
         )
     }
 }
+
 export default connect()(CustomersNew)
 
