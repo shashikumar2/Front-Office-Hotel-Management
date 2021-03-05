@@ -15,11 +15,6 @@ class BillingShow extends React.Component{
                 <p className="h6 text-left"><em><strong>Date :   {this.props.billing.checkOut && moment(this.props.billing.checkOut).format('LL')}</strong></em> </p>
                 
                 <table className="table table-sm table-striped">
-                     <thead>
-                          <tr>  
-                          </tr>
-                     </thead>
-
                      <tbody>                
                             <tr > 
                                 <td>Name : </td>                               
