@@ -57,8 +57,8 @@ class Register extends React.Component{
                  <input  type="radio" id="executive" value={this.state.role} onChange={() => {this.handleRole('executive')}} checked={this.state.role == 'executive'} />
                  <label class="col-sm-2" >Executive  </label>
                  </div>                    
-               </div>    
-               </div>
+                 </div>    
+                 </div>
 
                 <div className="form-group row">  
                 <label class="col-sm-2 col-form-label col-form-label-sm h3"   htmlFor= 'username'>Username</label>  
