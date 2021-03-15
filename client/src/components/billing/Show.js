@@ -2,51 +2,50 @@ import React from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
 
-class BillingShow extends React.Component{   
-    render(){
+function BillingShow(props){       
         return (
             <div>
-              {((this.props.customers.length!=0) && (this.props.billings.length!=0) && (this.props.bookings.length!=0)) ?  (
+              {((props.customers.length!=0) && (props.billings.length!=0) && (props.bookings.length!=0)) ?  (
               
                <div >                    
                 <br/>                
                 <p className="h4 text-center"><strong>HOTEL INVOICE </strong></p>                        
-                <p className="h6 text-left "><em><strong>Invoice No :  {this.props.billing.code}</strong> </em> </p> 
-                <p className="h6 text-left"><em><strong>Date :   {this.props.billing.checkOut && moment(this.props.billing.checkOut).format('LL')}</strong></em> </p>
+                <p className="h6 text-left "><em><strong>Invoice No :  {props.billing.code}</strong> </em> </p> 
+                <p className="h6 text-left"><em><strong>Date :   {props.billing.checkOut && moment(props.billing.checkOut).format('LL')}</strong></em> </p>
                 
                 <table className="table table-sm table-striped">
                      <tbody>                
                             <tr > 
                                 <td>Name : </td>                               
-                                <td>{this.props.customers.find(cust=>cust._id ===this.props.billing.customer).name}</td>
+                                <td>{props.customers.find(cust=>cust._id ===props.billing.customer).name}</td>
                             </tr> 
                             <tr> 
                                 <td>Rooms : </td>
-                                <td>{this.props.billing.rooms}</td> 
+                                <td>{props.billing.rooms}</td> 
                             </tr>
                             <tr>
                                  <td>Check In :</td>
-                                 <td>{this.props.bookings.find(book=>book._id ===this.props.billing.checkIn).checkIn && moment(this.props.bookings.find(book=>book._id ===this.props.billing.checkIn).checkIn).format('LL')}</td>
+                                 <td>{props.bookings.find(book=>book._id ===props.billing.checkIn).checkIn && moment(props.bookings.find(book=>book._id ===props.billing.checkIn).checkIn).format('LL')}</td>
                             </tr>
                             <tr> 
                                  <td>Check Out :</td>
-                                 <td>{this.props.billing.checkOut && moment(this.props.billing.checkOut).format('LL')}</td>
+                                 <td>{props.billing.checkOut && moment(props.billing.checkOut).format('LL')}</td>
                             </tr>
                             <tr >
                                 <td>Time : </td>
-                                <td>{this.props.billing.time}</td> 
+                                <td>{props.billing.time}</td> 
                             </tr>  
                             <tr>
                                 <td>No Of Days : </td>
-                                <td>{this.props.billing.noOfDays}</td>   
+                                <td>{props.billing.noOfDays}</td>   
                             </tr>
                             <tr >
                                 <td>Price/Day : </td>
-                                <td>{this.props.billing.price}</td> 
+                                <td>{props.billing.price}</td> 
                             </tr>    
                             <tr >
                                 <td className="table-dark">Total : </td>
-                                <td className="table-dark">{this.props.billing.amount}</td>                                                         
+                                <td className="table-dark">{props.billing.amount}</td>                                                         
                             </tr>                              
                    </tbody>
                 </table>
@@ -63,8 +62,7 @@ class BillingShow extends React.Component{
                )}
                <br/> <br/> 
             </div>
-            )
-        }
+            )        
 }
 
 const mapStateToProps = (state, props) => {

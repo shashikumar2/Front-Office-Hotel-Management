@@ -44,7 +44,6 @@ class ServicesList extends React.Component{
                     <th> Delete?</th>  
                 </tr>
             </thead>
-
             <tbody>
                 {
                    this.props.services.map((service,i) =>{
@@ -87,4 +86,5 @@ const mapStateToProps = (state) => {
         workers: state.workers               
     }
 }
+
 export default connect(mapStateToProps)(ServicesList)
