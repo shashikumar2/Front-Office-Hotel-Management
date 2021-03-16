@@ -12,10 +12,8 @@ import {startGetServices} from './actions/servicesAction'
 import {startGetBillings} from './actions/billingsAction'
 
 const store = configureStore() 
-console.log(store.getState())
-
 store.subscribe(() => {
-    console.log('index',store.getState())
+    console.log('index', store.getState())
 })
 
 if(localStorage.getItem('token')) {

@@ -56,7 +56,7 @@ class CustomersList extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        customers:state.customers,        
+        customers:state.customers       
     }
 }
 
