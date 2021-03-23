@@ -14,8 +14,7 @@ const bookingSchema = new Schema({
     type: Schema.Types.ObjectId,
     unique: true,
     required: true,
-    ref: "Customer"
-    
+    ref: "Customer"    
   },
 
   rooms: {

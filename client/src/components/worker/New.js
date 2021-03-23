@@ -75,5 +75,6 @@ class WorkersNew extends React.Component{
         )
     }
 }
+
 export default connect()(WorkersNew)
 
