@@ -25,7 +25,6 @@ class Login extends React.Component{
         this.props.dispatch(startUserLogin(this.state,redirect))    
     }
 
-
     render(){
         return (
           <div>
