@@ -1,6 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { startPostBilling } from '../../actions/billingsAction'
+import {connect} from 'react-redux'
+import {startPostBilling} from '../../actions/billingsAction'
 import moment from 'moment'
 
 class BillingsNew extends React.Component{
@@ -72,7 +72,6 @@ class BillingsNew extends React.Component{
               <p className="h4 text-center">Add Bill</p><br/>
                 
               <form onSubmit = {this.handleSubmit}>
-
                 <div className="form-group row">
                 <label class="col-sm-2 col-form-label col-form-label-sm h3"  htmlFor= 'code'>Code No</label> 
                 <div class="col-sm-10">                       
@@ -146,7 +145,6 @@ class BillingsNew extends React.Component{
                 </div><br/>  
 
                 <input className="btn btn-secondary btn-sm btn-block" type ='submit' value='Submit' /><br/><br/><br/>
-
               </form>
             </div>
            </div>

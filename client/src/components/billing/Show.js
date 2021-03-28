@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import moment from 'moment'
 
 function BillingShow(props){       
@@ -62,7 +62,7 @@ function BillingShow(props){
                )}
                <br/> <br/> 
             </div>
-            )        
+        )        
 }
 
 const mapStateToProps = (state, props) => {
