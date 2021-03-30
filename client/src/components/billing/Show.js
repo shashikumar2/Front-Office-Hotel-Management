@@ -5,9 +5,8 @@ import moment from 'moment'
 function BillingShow(props){       
         return (
             <div>
-              {((props.customers.length!=0) && (props.billings.length!=0) && (props.bookings.length!=0)) ?  (
-              
-               <div >                    
+              {((props.customers.length!=0) && (props.billings.length!=0) && (props.bookings.length!=0)) ?  (              
+               <div>                    
                 <br/>                
                 <p className="h4 text-center"><strong>HOTEL INVOICE </strong></p>                        
                 <p className="h6 text-left "><em><strong>Invoice No :  {props.billing.code}</strong> </em> </p> 
@@ -15,7 +14,7 @@ function BillingShow(props){
                 
                 <table className="table table-sm table-striped">
                      <tbody>                
-                            <tr > 
+                            <tr> 
                                 <td>Name : </td>                               
                                 <td>{props.customers.find(cust=>cust._id ===props.billing.customer).name}</td>
                             </tr> 
@@ -31,7 +30,7 @@ function BillingShow(props){
                                  <td>Check Out :</td>
                                  <td>{props.billing.checkOut && moment(props.billing.checkOut).format('LL')}</td>
                             </tr>
-                            <tr >
+                            <tr>
                                 <td>Time : </td>
                                 <td>{props.billing.time}</td> 
                             </tr>  
@@ -39,11 +38,11 @@ function BillingShow(props){
                                 <td>No Of Days : </td>
                                 <td>{props.billing.noOfDays}</td>   
                             </tr>
-                            <tr >
+                            <tr>
                                 <td>Price/Day : </td>
                                 <td>{props.billing.price}</td> 
                             </tr>    
-                            <tr >
+                            <tr>
                                 <td className="table-dark">Total : </td>
                                 <td className="table-dark">{props.billing.amount}</td>                                                         
                             </tr>                              

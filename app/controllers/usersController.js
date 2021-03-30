@@ -51,8 +51,7 @@ usersController.login = (req, res) => {
         })
 }
 
-usersController.logout= (req, res) => {
-    
+usersController.logout= (req, res) => {    
     if(req.header('Authorization')) {
         res.json({
             notice : 'You are successfully logged out'
