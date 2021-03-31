@@ -48,13 +48,11 @@ function BillingShow(props){
                             </tr>                              
                    </tbody>
                 </table>
-                <br/>     
-                            
+                <br/>                                 
                  <p className="h5"><em><strong>Signature : </strong></em></p>
                  <br/> 
                  <p className="h5"><em><strong>Thank You. . .Visit Again </strong></em></p><br/>                          
-                 <img src="/images/bill.gif" className="img-fluid img-thumbnail" alt="Responsive image" /><br/> 
-            
+                 <img src="/images/bill.gif" className="img-fluid img-thumbnail" alt="Responsive image" /><br/>             
                </div>
                ) : (
                 <p> <img src="/images/load2.jpg" alt="" /></p>

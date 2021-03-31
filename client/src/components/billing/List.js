@@ -27,7 +27,6 @@ class BillingsList extends React.Component{
         }
         this.props.dispatch(startShowBilling(id,redirect)) 
     }
-
      
   render(){
     return(    
@@ -83,8 +82,7 @@ class BillingsList extends React.Component{
        
        <Link to="/billings/new" ><u><strong>Add Bill</strong></u></Link><br/><br/>
        </div>
-               ) : (
-              
+               ) : (              
                 <p><img src="/images/load2.jpg" alt="" /></p>
                )}
         </div>
