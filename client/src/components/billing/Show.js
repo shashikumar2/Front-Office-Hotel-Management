@@ -10,7 +10,7 @@ function BillingShow(props){
                 <br/>                
                 <p className="h4 text-center"><strong>HOTEL INVOICE </strong></p>                        
                 <p className="h6 text-left "><em><strong>Invoice No :  {props.billing.code}</strong> </em> </p> 
-                <p className="h6 text-left"><em><strong>Date :   {props.billing.checkOut && moment(props.billing.checkOut).format('LL')}</strong></em> </p>
+                <p className="h6 text-left"><em><strong>Date :  {props.billing.checkOut && moment(props.billing.checkOut).format('LL')}</strong></em> </p>
                 
                 <table className="table table-sm table-striped">
                      <tbody>                

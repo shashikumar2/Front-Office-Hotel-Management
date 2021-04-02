@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 import moment from 'moment'
 import '../../App.css'
 import {startGetBookings} from '../../actions/bookingsAction'
@@ -44,7 +44,6 @@ class BookingsList extends React.Component{
                     <th> Delete?</th>  
                 </tr>
             </thead>
-
             <tbody>
                 {
                    this.props.bookings.map((booking,i) =>{
