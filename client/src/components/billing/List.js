@@ -52,7 +52,6 @@ class BillingsList extends React.Component{
                     <th> Print? </th> 
                 </tr>
             </thead>
-
             <tbody>
                 {
                    this.props.billings.map((billing,i) =>{
@@ -67,10 +66,10 @@ class BillingsList extends React.Component{
                                 <td> {billing.noOfDays}</td> 
                                 <td> {billing.price}</td>
                                 <td> {billing.amount}</td>                                                                                           
-                                <td> { <button className="btn btn-secondary" onClick={() => {
+                                <td> {<button className="btn btn-secondary" onClick={() => {
                                                    this.handleRemove(billing._id)
                                                     }}>Delete</button>}</td>     
-                                <td> { <button className="btn btn-secondary" onClick={() => {
+                                <td> {<button className="btn btn-secondary" onClick={() => {
                                                    this.handleShow(billing._id)
                                                     }} > Print</button>}</td>                                                                                  
                             </tr>                 
