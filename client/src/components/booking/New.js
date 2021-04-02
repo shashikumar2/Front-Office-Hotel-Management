@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from 'react-select'
-import { connect } from 'react-redux'
-import { startPostBooking } from '../../actions/bookingsAction'
+import {connect} from 'react-redux'
+import {startPostBooking} from '../../actions/bookingsAction'
 
 class BookingsNew extends React.Component{
     constructor(){
