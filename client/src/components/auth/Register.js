@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {startUserRegister} from '../../actions/userAction'
 
 class Register extends React.Component{
+
     constructor(){
         super()
         this.state= {
@@ -39,32 +40,32 @@ class Register extends React.Component{
               <div className="col-md-6">
               <img src="/images/register3.png" className="img-fluid float-left" alt="Responsive image" /> 
               </div>             
-              <div className="col-md-5 offset-md-1">                   
-                 <p  className="h3 text-center"><em><strong>Register</strong></em></p>               
-                 <form onSubmit = {this.handleSubmit}>
-                 <br/>
+                    <div className="col-md-5 offset-md-1">                   
+                        <p  className="h3 text-center"><em><strong>Register</strong></em></p>               
+                        <form onSubmit = {this.handleSubmit}>
+                        <br/>
 
-                 <div className="form-group row">  
-                 <label  class="col-sm-2 col-form-label col-form-label-sm h3">Role? </label>
-                 <div class="col-sm-5">  
+                        <div className="form-group row">  
+                        <label  class="col-sm-2 col-form-label col-form-label-sm h3">Role? </label>
+                        <div class="col-sm-5">  
 
-                 <div class="radio radio-danger">
-                 <input  type="radio" id="owner" value={this.state.role} onChange={() => {this.handleRole('owner')}} checked={this.state.role == 'owner'} />
-                 <label class=" col-sm-2"  >Owner  </label>
-                 </div>
-                    
-                 <div class="radio radio-danger">
-                 <input  type="radio" id="executive" value={this.state.role} onChange={() => {this.handleRole('executive')}} checked={this.state.role == 'executive'} />
-                 <label class="col-sm-2" >Executive  </label>
-                 </div>                    
-                 </div>    
-                 </div>
+                        <div class="radio radio-danger">
+                        <input  type="radio" id="owner" value={this.state.role} onChange={() => {this.handleRole('owner')}} checked={this.state.role == 'owner'} />
+                        <label class=" col-sm-2"  >Owner  </label>
+                        </div>
+                            
+                        <div class="radio radio-danger">
+                        <input  type="radio" id="executive" value={this.state.role} onChange={() => {this.handleRole('executive')}} checked={this.state.role == 'executive'} />
+                        <label class="col-sm-2" >Executive  </label>
+                        </div>                    
+                        </div>    
+                        </div>
 
-                <div className="form-group row">  
-                <label class="col-sm-2 col-form-label col-form-label-sm h3"   htmlFor= 'username'>Username</label>  
-                <div class="col-sm-10">   
-                <input className="form-control form-control-sm" type ='text' id ='name' name ='username' value = { this.state.username} onChange= {this.handleChange}/>
-                </div>    
+                        <div className="form-group row">  
+                        <label class="col-sm-2 col-form-label col-form-label-sm h3"   htmlFor= 'username'>Username</label>  
+                        <div class="col-sm-10">   
+                        <input className="form-control form-control-sm" type ='text' id ='name' name ='username' value = { this.state.username} onChange= {this.handleChange}/>
+                        </div>    
                 </div><br/>
 
                 <div className="form-group row">
