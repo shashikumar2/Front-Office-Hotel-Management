@@ -9,4 +9,5 @@ function Home2(props) {
         </div>
     )
 }
+
 export default Home2 
