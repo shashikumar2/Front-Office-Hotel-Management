@@ -6,6 +6,7 @@ import {startGetCustomers} from '../../actions/customersAction'
 import {startDeleteCustomer} from '../../actions/customersAction'
 
 class CustomersList extends React.Component{
+
     componentDidMount() {  
         if (this.props.customers.length === 0) {
             this.props.dispatch(startGetCustomers())
@@ -33,7 +34,7 @@ class CustomersList extends React.Component{
 
                         <div class="card-body">                      
                             <p class="card-text h6"><strong><em>Name : {customer.name} </em></strong></p>
-                            <p class="card-text h6"><strong><em>Email: {customer.email} </em></strong></p>
+                            <p class="card-text h6"><strong><em>Email : {customer.email} </em></strong></p>
                             <p class="card-text h6"><strong><em>Phone : {customer.phone}</em></strong></p>
                         </div>
 
@@ -48,7 +49,7 @@ class CustomersList extends React.Component{
                     }) 
                 }
           </div>        
-          <Link to={`/customers/new`} ><u><strong>Add Customer</strong></u></Link> <br/><br/>
+          <Link to={`/customers/new`} ><u><strong>Add Customer</strong></u></Link><br/><br/>
         </div>
     )
   }    
