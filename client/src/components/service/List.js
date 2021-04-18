@@ -10,9 +10,9 @@ import {startGetWorkers} from '../../actions/workersAction'
 
 class ServicesList extends React.Component{
     componentDidMount() {  
-            this.props.dispatch(startGetRooms())
-            this.props.dispatch(startGetWorkers())
-            this.props.dispatch(startGetServices())    
+        this.props.dispatch(startGetRooms())
+        this.props.dispatch(startGetWorkers())
+        this.props.dispatch(startGetServices())    
     }
 
     handleCompletedUpdate=(service)=>{                
