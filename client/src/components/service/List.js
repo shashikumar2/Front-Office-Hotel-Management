@@ -86,5 +86,4 @@ const mapStateToProps = (state) => {
         workers: state.workers               
     }
 }
-
 export default connect(mapStateToProps)(ServicesList)
