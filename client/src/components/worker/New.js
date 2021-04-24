@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { startPostWorker } from '../../actions/workersAction'
+import {startPostWorker} from '../../actions/workersAction'
 
 class WorkersNew extends React.Component{
     constructor(){
